@@ -1,0 +1,589 @@
+/* Variáveis de Cores */
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #333333;
+    --background-color: #1e1e1e;
+    --text-color: #ffffff;
+    --accent-color: #FFD700;
+    --transition-speed: 0.3s;
+}
+
+/* Fonts atualizadas */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar aprimorada */
+nav {
+    background-color: var(--secondary-color);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color var(--transition-speed);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color var(--transition-speed);
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Hero aprimorado */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Designer.jpeg') no-repeat center center;
+    background-size: cover; /* Ajustar o tamanho da imagem para cobrir toda a área */
+    height: 80vh; /* Diminuir a altura para evitar duplicação */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 60px; /* Espaço para a navbar fixa */
+    color: var(--text-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(10px);
+    z-index: -1;
+    transform: scale(1.1);
+}
+
+.hero h2 {
+    font-size: 3em;
+    margin-bottom: 15px;
+    color: var(--accent-color);
+    animation: fadeInDown 1s ease-out;
+    font-family: 'Orbitron', sans-serif; /* Fonte mais tech */
+}
+
+.hero p {
+    font-size: 1.5em;
+    max-width: 800px;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    padding: 60px 20px;
+}
+
+/* Formulário aprimorado */
+#calculator-form {
+    background-color: #2e2e2e;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: slideInLeft 1s ease-out;
+    margin: 20px;
+}
+
+/* Estilização aprimorada para labels */
+#calculator-form label {
+    font-weight: 700;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Estilização aprimorada para inputs e selects */
+#calculator-form input,
+#calculator-form select {
+    background-color: #3e3e3e;
+    border: 1px solid #555;
+    border-radius: 5px;
+    padding: 12px 15px;
+    font-size: 1em;
+    color: #ffffff;
+    width: 100%;
+    margin-top: 5px;
+    box-sizing: border-box;
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed), background-color var(--transition-speed);
+}
+
+/* Efeitos de foco para inputs e selects */
+#calculator-form input:focus,
+#calculator-form select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px var(--primary-color);
+    background-color: #4a4a4a;
+    outline: none;
+}
+
+/* Estilização aprimorada para placeholders */
+#calculator-form input::placeholder,
+#calculator-form select::placeholder {
+    color: #cccccc;
+    opacity: 1; /* Firefox */
+}
+
+/* Estilização para o objetivo e faixa etária */
+#calculator-form #objective,
+#calculator-form #age_group {
+    margin-top: 15px;
+}
+
+#calculator-form button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+    margin-top: 20px;
+}
+
+#calculator-form button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Planejador de Refeições aprimorado */
+#meal-planner {
+    background-color: #2e2e2e;
+    border-radius: 10px;
+    padding: 30px;
+    margin-top: 60px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: slideInRight 1s ease-out;
+    margin: 20px;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.meal-options {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.meal {
+    background-color: #3e3e3e;
+    border-radius: 10px;
+    padding: 25px;
+    width: 30%;
+    text-align: center;
+    transition: transform var(--transition-speed), background-color var(--transition-speed);
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.meal:hover {
+    transform: translateY(-5px);
+    background-color: var(--primary-color);
+}
+
+.meal i {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: var(--accent-color);
+    transition: color var(--transition-speed);
+}
+
+.meal:hover i {
+    color: var(--text-color);
+}
+
+.meal h3 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+/* Botões do Planejador de Refeições */
+.add-meal {
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+    margin-top: 10px;
+}
+
+.add-meal:hover {
+    background-color: #e6b800;
+    transform: scale(1.05);
+}
+
+/* Lista de Refeições */
+.meal-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.meal-list li {
+    background-color: #4e4e4e;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color var(--transition-speed);
+}
+
+.meal-list li:hover {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+.remove-meal {
+    background: none;
+    border: none;
+    color: #ff4d4d;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: color var(--transition-speed);
+}
+
+.remove-meal:hover {
+    color: #ff1a1a;
+}
+
+/* Estilos para o Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #2e2e2e;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#meal-input {
+    width: 80%;
+    padding: 10px;
+    margin: 15px 0;
+    border-radius: 5px;
+    border: 1px solid #555;
+    background-color: #3e3e3e;
+    color: #fff;
+}
+
+#save-meal {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed), transform var (--transition-speed);
+}
+
+#save-meal:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Botões para Gerar PDF, Exportar CSV, Limpar Refeições e Enviar Resultados por Email */
+#generate-pdf, #generate-csv, #clear-meals, #generate-results-pdf, #send-results-email {
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+#generate-pdf:hover, #generate-csv:hover, #clear-meals:hover, #generate-results-pdf:hover, #send-results-email:hover {
+    background-color: #e6b800;
+    transform: scale(1.05);
+}
+
+/* Estilos para o Gráfico */
+#results-chart {
+    margin-top: 20px;
+}
+
+/* Estilos para o Rastreador de Consumo de Água */
+#water-tracker {
+    background-color: #2e2e2e;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 30px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#add-water {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+#add-water:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+#water-count {
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .meal {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    .meal {
+        width: 100%;
+    }
+
+    .hero h2 {
+        font-size: 2.5em;
+    }
+
+    .hero p {
+        font-size: 1.2em;
+    }
+
+    #calculator-form {
+        padding: 20px;
+    }
+
+    #calculator-form label,
+    #calculator-form input,
+    #calculator-form select,
+    #calculator-form button {
+        font-size: 0.9em;
+    }
+
+    #results {
+        padding: 20px;
+    }
+
+    #results p {
+        font-size: 1em;
+    }
+
+    #meal-planner {
+        padding: 20px;
+    }
+
+    .meal-options {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .meal {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 60vh;
+    }
+
+    .hero h2 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    #calculator-form {
+        padding: 15px;
+    }
+
+    #calculator-form label,
+    #calculator-form input,
+    #calculator-form select,
+    #calculator-form button {
+        font-size: 0.8em;
+    }
+
+    #results {
+        padding: 15px;
+    }
+
+    #results p {
+        font-size: 0.9em;
+    }
+
+    #meal-planner {
+        padding: 15px;
+    }
+
+    .meal {
+        width: 90%;
+        margin-bottom: 15px;
+    }
+}
+
+/* Botão aprimorado */
+button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Resultados aprimorados */
+#results {
+    background-color: #2e2e2e;
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-out;
+    margin: 20px;
+    color: var(--text-color);
+}
+
+#results p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Modal aprimorado */
+#meal-modal input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #555;
+    background-color: #3e3e3e;
+    color: #fff;
+}
